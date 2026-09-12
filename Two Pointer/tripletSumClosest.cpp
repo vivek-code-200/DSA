@@ -12,7 +12,7 @@ int tripleSumZero(vector<int> &arr, int &target)
     int size = arr.size();
     sort(arr.begin(), arr.end());
 
-    int max_diff = INT_MAX;
+    int min_diff = INT_MAX;
     int result_sum;
 
     for (int i = 0; i < size - 2; i++)
@@ -29,9 +29,9 @@ int tripleSumZero(vector<int> &arr, int &target)
         {
             int sum = arr[i] + arr[left] + arr[right];
             int diff = abs(sum - target);
-            if (diff < max_diff)
+            if (diff < min_diff)
             {
-                max_diff = diff;
+                min_diff = diff;
                 result_sum = sum;
             }
 
